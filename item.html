@@ -1,4 +1,5 @@
 {% extends pack.base.template %}
+{% load markup %}
 
 {% block main %}
     <div class="item_wrap">
@@ -9,6 +10,7 @@
         {% endifequal %}
     </div>
 
+    <h2>{{ page.name }}</h2>
     <div class="item_wrap-bottom">
         {% ifnotequal page.files|length 1 %}
         <p class="item-photos">
@@ -21,8 +23,7 @@
     </div>
 
     <div class="description">
-        <h2>{{ page.name }}</h2>
-        {{ page.dic.description }}
+        {{ page.dic.description|textile }}
     </div>
 {% endblock %}
 
