@@ -1,5 +1,6 @@
+#content {min-height: 410px;}
 a {text-decoration: none;}
 .navigation a {display: block; color:black; height: 40px; font-size: 1.33em}
-.sub-navigation a {display: block; color: #e9a8e3; height: 20px; }
-.navigation .active {background: #e9a8e3;}
-.sub-navigation {text-decoration: underline;}
+.sub-navigation a {display: block; color: #e9a8e3; height: 40px; text-decoration: none; }
+.navigation a:active, .navigation a:hover {background: #e9a8e3;}
+.sub-navigation a:active, .sub-navigation a:hover {text-decoration: underline;}
