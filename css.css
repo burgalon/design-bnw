@@ -7,7 +7,7 @@ h2{ color: #e9a8e3; font-size: 1.33em; width: 440px; float: left;}
 .item_wrap-bottom {float: left;}
 .item-photos, .item-photos a {height: 24px; font-size: 1.33em; color: #e9a8e3; }
 a {text-decoration: none;}
-.navigation a, .sub-navigation a {display: block; color:black; padding-bottom: 16px; font-size: 1.33em}
+.navigation a, .sub-navigation a {display: block; color:black; margin-bottom: 16px; font-size: 1.33em}
 .sub-navigation a {color: #e9a8e3; }
 .sub-navigation {min-height: 1px;}
 .navigation a:active, .navigation a:hover, .navigation a.active {background: #e9a8e3;}
