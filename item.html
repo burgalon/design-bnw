@@ -67,7 +67,7 @@
 			    var el=$(this);
 			    var photo_number = parseInt($(current_photo).text()) + parseInt(el.attr('rel')) - 1;
 			    if(photo_number<0) photo_number = {{ page.files|length }};
-			    else if(photo_number>={{ page.files|length }}) photo_number = 1;
+			    else if(photo_number>={{ page.files|length }}) photo_number = 0;
 				item_wrap.animate({
 					'scrollLeft': photo_width*(photo_number-1)
 					}, 'slow');
