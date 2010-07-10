@@ -69,7 +69,7 @@
 			    if(photo_number<0) photo_number = {{ page.files|length }};
 			    else if(photo_number>={{ page.files|length }}) photo_number = 0;
 				item_wrap.animate({
-					'scrollLeft': photo_width*(photo_number-1)
+					'scrollLeft': photo_width*(photo_number)
 					}, 'slow');
 				current_photo.text(photo_number+1);
 				return false;
