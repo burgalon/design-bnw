@@ -14,3 +14,4 @@ a {text-decoration: none;}
 .sub-navigation a:active, .sub-navigation a:hover, .sub-navigation a.active {text-decoration: underline;}
 
 #footer {text-align: center;}
+#footer a {color: #e9a8e3;}
