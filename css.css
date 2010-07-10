@@ -2,9 +2,9 @@
 .logo {padding: 0 0 30px 160px;}
 .logo a{ color: #e9a8e3; font-size: 60px;}
 
-h2{ color: #e9a8e3; font-size: 1.33em; width: 400px; float: left;}
+h2{ color: #e9a8e3; font-size: 1.33em; width: 440px; float: left;}
 .item_wrap {margin-bottom: 11px;}
-.item_wrap-bottom {width: 110px; float: left;}
+.item_wrap-bottom {float: left;}
 .item-photos, .item-photos a {height: 24px; font-size: 1.33em; color: #e9a8e3; }
 a {text-decoration: none;}
 .navigation a, .sub-navigation a {display: block; color:black; height: 40px; font-size: 1.33em}
