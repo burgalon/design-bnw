@@ -3,7 +3,7 @@
 .logo a{ color: #e9a8e3; font-size: 60px;}
 
 h2{ color: #e9a8e3; font-size: 1.33em; width: 400px; float: left;}
-.item-wrap {margin-bottom: 11px;}
+.item_wrap {margin-bottom: 11px;}
 .item_wrap-bottom {width: 110px; float: left;}
 .item-photos span {height: 24px;}
 a {text-decoration: none;}
