@@ -14,10 +14,10 @@
     <div class="item_wrap-bottom">
         {% ifnotequal page.files|length 1 %}
         <p class="item-photos">
-            <span class="back">&lt;</span>
+            <a href="#" class="back nav-photo" rel="1">&lt;</a>
             <span class="current">1</span>
-            <span class="total">{{ page.files|length }}</span>
-            <span class="forward">&gt;</span>
+            <span class="total">/ {{ page.files|length }}</span>
+            <a href="#" class="forward nav-photo" rel="-1">&gt;</a>
             {% for i in page.files %}
                 <a href="{% firstof i.get_file_thumb i.get_file %}" target="photo" rel="{{ forloop.counter }}" class="item-photo">{{ forloop.counter }}</a>
             {% endfor %}
@@ -62,6 +62,17 @@
 					'scrollLeft': photo_width*($(this).attr('rel')-1)
 					}, 'slow');
 			});
+			var current_photo = $('.item-photos .current');
+			$('.nav-photo').click(function() {
+			    var el=$(this);
+			    var photo_number = parseInt($(current_photo).text()) + parseInt(el.attr('rel')) - 1;
+			    if(photo_number<0) photo_number = {{ page.files|length }};
+			    else if(photo_number>={{ page.files|length }}) photo_number = 1;
+				item_wrap.animate({
+					'scrollLeft': photo_width*(photo_number-1)
+					}, 'slow');
+				current_photo.text(photo_number+1);
+            });
 		});
 	{% endifnotequal %}
 	</script>
