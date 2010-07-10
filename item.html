@@ -14,10 +14,10 @@
     <div class="item_wrap-bottom">
         {% ifnotequal page.files|length 1 %}
         <p class="item-photos">
-            <a href="#" class="back nav-photo" rel="1">&lt;</a>
+            <a href="#" class="back nav-photo" rel="-1">&lt;</a>
             <span class="current">1</span>
             <span class="total">/ {{ page.files|length }}</span>
-            <a href="#" class="forward nav-photo" rel="-1">&gt;</a>
+            <a href="#" class="forward nav-photo" rel="1">&gt;</a>
             {% for i in page.files %}
                 <a href="{% firstof i.get_file_thumb i.get_file %}" target="photo" rel="{{ forloop.counter }}" class="item-photo hide">{{ forloop.counter }}</a>
             {% endfor %}
