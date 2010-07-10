@@ -1,5 +1,5 @@
 a {text-decoration: none;}
-.navigation a {display: block;}
-.sub-navigation a {color: #e9a8e3;}
+.navigation a {display: block; color:black; height: 40px; font-size: 1.33em}
+.sub-navigation a {display: block; color: #e9a8e3; height: 20px; }
 .navigation .active {background: #e9a8e3;}
 .sub-navigation {text-decoration: underline;}
