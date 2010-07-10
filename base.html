@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="span-3 navigation colborder">
+    <div class="span-3 navigation">
         {% nav_anchors nav request.META.PATH_INFO "" %}
     </div>
     <div class="span-3 prepend-1 sub-navigation">
@@ -21,7 +21,7 @@
             <a href="{{ i.url }}" title="{{ i.sub_title }}">{{ i.name }}</a>
         {% endfor %}
     </div>
-	<div id="main" class="span-16 prepend-1 prepend-top">
+	<div id="main" class="span-13 prepend-1">
 	{% block main %}
 	{% endblock %}
 	</div>
