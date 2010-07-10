@@ -19,7 +19,7 @@
             <span class="total">/ {{ page.files|length }}</span>
             <a href="#" class="forward nav-photo" rel="-1">&gt;</a>
             {% for i in page.files %}
-                <a href="{% firstof i.get_file_thumb i.get_file %}" target="photo" rel="{{ forloop.counter }}" class="item-photo">{{ forloop.counter }}</a>
+                <a href="{% firstof i.get_file_thumb i.get_file %}" target="photo" rel="{{ forloop.counter }}" class="item-photo hide">{{ forloop.counter }}</a>
             {% endfor %}
         </p>
         {% endifnotequal %}
@@ -72,6 +72,7 @@
 					'scrollLeft': photo_width*(photo_number-1)
 					}, 'slow');
 				current_photo.text(photo_number+1);
+				return false;
             });
 		});
 	{% endifnotequal %}

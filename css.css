@@ -5,7 +5,7 @@
 h2{ color: #e9a8e3; font-size: 1.33em; width: 400px; float: left;}
 .item_wrap {margin-bottom: 11px;}
 .item_wrap-bottom {width: 110px; float: left;}
-.item-photos span {height: 24px;}
+.item-photos {height: 24px; font-size: 1.33em; color: #e9a8e3; }
 a {text-decoration: none;}
 .navigation a, .sub-navigation a {display: block; color:black; height: 40px; font-size: 1.33em}
 .sub-navigation a {color: #e9a8e3; }
