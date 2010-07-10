@@ -7,9 +7,9 @@ h2{ color: #e9a8e3; font-size: 1.33em; width: 400px; float: left;}
 .item_wrap-bottom {width: 110px; float: left;}
 .item-photos span {height: 24px;}
 a {text-decoration: none;}
-.navigation a {display: block; color:black; height: 40px; font-size: 1.33em}
+.navigation a, .sub-navigation a {display: block; color:black; height: 40px; font-size: 1.33em}
+.sub-navigation a {color: #e9a8e3; }
 .sub-navigation {min-height: 1px;}
-.sub-navigation a {display: block; color: #e9a8e3; height: 40px; text-decoration: none; }
 .navigation a:active, .navigation a:hover, .navigation a.active {background: #e9a8e3;}
 .sub-navigation a:active, .sub-navigation a:hover, .sub-navigation a.active {text-decoration: underline;}
 
