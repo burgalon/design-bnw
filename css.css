@@ -13,5 +13,6 @@ a {text-decoration: none;}
 .navigation a:active, .navigation a:hover, .navigation a.active {background: #e9a8e3;}
 .sub-navigation a:active, .sub-navigation a:hover, .sub-navigation a.active {text-decoration: underline;}
 
-#footer {text-align: center; color: #e9a8e3; }
-#footer a {color: #e9a8e3; text-decoration: underline;}
+#footer {text-align: center; color: #cf74c6; }
+#footer a {color: #e9a8e3;}
+#footer a:hover {color: #cf74c6;}
