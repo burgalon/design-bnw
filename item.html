@@ -2,79 +2,15 @@
 {% load markup %}
 
 {% block main %}
-    <div class="item_wrap">
-        {% ifequal item.mime_type "image/jpeg" %}
-            <a href="{% firstof next_item.url portfolio.pages_navigation.1.url %}" title="{{ next_item.name }}">{{ item.render }}</a>
-        {% else %}
-            {{item.render}}
-        {% endifequal %}
-    </div>
-
     <h2>{{ page.name }}</h2>
-    <div class="item_wrap-bottom">
-        {% ifnotequal page.files|length 1 %}
-        <p class="item-photos">
-            <a href="#" class="back nav-photo" rel="-1">&lt;</a>
-            <span class="current">1</span>
-            <span class="total">/ {{ page.files|length }}</span>
-            <a href="#" class="forward nav-photo" rel="1">&gt;</a>
-            {% for i in page.files %}
-                <a href="{% firstof i.get_file_thumb i.get_file %}" target="photo" rel="{{ forloop.counter }}" class="item-photo hide">{{ forloop.counter }}</a>
-            {% endfor %}
-        </p>
-        {% endifnotequal %}
-    </div>
-
-    <div class="description span-9">
+    <div class="description span-14">
         {{ page.dic.description|textile }}
     </div>
-{% endblock %}
 
-{% block beforeBodyEnd %}
-	{{ block.super }}
-	<script type="text/javascript">
-	if($('.business-email').length) {
-		$('.business-email').val($('#business-email-wrap a').attr('href').replace('mailto:',''));
-	}
-	{% ifnotequal page.files|length 1 %}
-		var item_photo = $('.item-photo');
-		// first - avoid opening new windows if javascript is working
-		item_photo.click(function() {return false;});
-		// wait for dom ready and only then load rest of the photos
-		$(document).ready(function() {
-			// set click events
-			var photo_width = 510;
-			var item_wrap_anchor = $('.item_wrap a');
-			item_wrap_anchor.wrap('<div class="item_scroll" />');
-			var item_wrap = $('.item_scroll');
-			// styling
-			item_wrap.css({'overflow': 'hidden', 'width': photo_width, 'direction': 'ltr'});
-			item_wrap_anchor.css({'width': '9999px', 'display':'block'});
-			// load more photos
-			item_photo.each(function(i) {
-				if(i==0) {$(this).addClass('active'); return;}
-				jQuery("<img>").attr("src", $(this).attr('href')).appendTo(item_wrap_anchor);
-			});
-			item_photo.click(function(){
-				item_photo.removeClass('active');
-				$(this).addClass('active');
-				item_wrap.animate({
-					'scrollLeft': photo_width*($(this).attr('rel')-1)
-					}, 'slow');
-			});
-			var current_photo = $('.item-photos .current');
-			$('.nav-photo').click(function() {
-			    var el=$(this);
-			    var photo_number = parseInt($(current_photo).text()) + parseInt(el.attr('rel')) - 1;
-			    if(photo_number<0) photo_number = {{ page.files|length }} - 1;
-			    else if(photo_number>={{ page.files|length }}) photo_number = 0;
-				item_wrap.animate({
-					'scrollLeft': photo_width*(photo_number)
-					}, 'slow');
-				current_photo.text(photo_number+1);
-				return false;
-            });
-		});
-	{% endifnotequal %}
-	</script>
+    {% for i in page.files %}
+    <div class="item_wrap">
+        {{i.render}}
+    </div>
+    {% endfor %}
+
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends pack.base.template %}
+{% load markup %}
+
+{% block main %}
+<h2>{{ page.name }}</h2>
+<div class="description span-14">
+    {{ page.dic.description|textile }}
+</div>
+{% with "horizontal" as catalog_class %}
+    {% include "site/catalog.inc.html" %}
+{% endwith %}
+<a class="rss" href="rss.xml">RSS</a>
+{% endblock %}

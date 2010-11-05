@@ -1,30 +1,53 @@
 {% extends "site/base.html" %}
 {% load utils %}
 
+{% block head %}
+	{{ block.super }}
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.1/swfobject.js"></script>
+{% endblock %}
+
 {% block logo %}
-	{% if files.logo %}
-		<a href="{{ portfolio.url }}" title="{{ dic.moto }}"><span>{{  portfolio.title }}</span>{{ files.logo.render }}</a>
-	{% else %}
-		<a href="{{ portfolio.url }}" title="{{ dic.moto }}"><span>{{  portfolio.title }}</span></a>
-	{% endif %}
 {% endblock %}
 
 {% block nav %}
 {% endblock %}
 
 {% block content %}
-    <div class="span-3 navigation">
+    <div class="span-5 sidebar">
+        <h1 class="logo">
+            <a href="{{ portfolio.url }}" title="{{ dic.moto }}" class="span-5 last">
+                <span>{{  portfolio.title }}</span>
+            </a>
+        </h1>
+        <hr/>
+        <div class="span-5 last navigation">
         {% for i in portfolio.pages_navigation %}
-            <a href="{{ i.url }}" class="{% ifequal page i %}active{% endifequal %}{% ifequal page.pages.0 i %}active{% endifequal %}">{{ i.name }}</a>
+            <a class="navigation-group span-5 last" href="{{ i.url }}">{{ i.name }}</a>
+            <div class="prepend-1 span-4 last sub-navigation sub-navigation-{{ forloop.counter }}">
+                {% for x in i.pages %}
+                    <a href="{{ x.url }}" class="{% ifequal page x %}active{% endifequal %} subnav-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" title="{{ x.sub_title }}">{{ x.name }}</a>
+                {% endfor %}
+            </div>
         {% endfor %}
+        </div>
+        <hr/>
+        <div class="span-5 last contact">
+            <p>{{  portfolio.title }} // {{  portfolio.dic.telephone }}</p>
+            <p>{{  portfolio.dic.email|obfuscate }}</p>
+        </div>
+        <hr/>
     </div>
-    <div class="span-3 sub-navigation">
-        {% for i in items %}
-            <a href="{{ i.url }}" class="{% ifequal page i %}active{% endifequal %}" title="{{ i.sub_title }}">{{ i.name }}</a>
-        {% endfor %}
-    </div>
-	<div id="main" class="span-13 prepend-1">
+	<div id="main" class="span-14 prepend-1">
 	{% block main %}
 	{% endblock %}
 	</div>
+{% endblock %}
+
+{% block beforeBodyEnd %}
+	{{ block.super }}
+	<script type="text/javascript">
+	if($('.business-email').length) {
+		$('.business-email').val($('#business-email-wrap a').attr('href').replace('mailto:',''));
+    }
+	</script>
 {% endblock %}

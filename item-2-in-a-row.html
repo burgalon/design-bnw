@@ -1,0 +1,16 @@
+{% extends pack.base.template %}
+{% load markup %}
+
+{% block main %}
+    <h2>{{ page.name }}</h2>
+    <div class="description span-9">
+        {{ page.dic.description|textile }}
+    </div>
+
+    {% for i in page.files %}
+    <div class="item_wrap">
+        {{i.render}}
+    </div>
+    {% endfor %}
+
+{% endblock %}

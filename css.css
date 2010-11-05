@@ -1,18 +1,110 @@
+/** base.html **/
 #content {min-height: 410px;}
-.logo {padding: 0 0 30px 160px;}
-.logo a{ color: #e9a8e3; font-size: 60px;}
+h1 {margin: 0;}
+.logo a{ color: #e9a8e3; font-size: 60px; width: 190px; height: 74px; background-position: center !important;}
 
-h2{ color: #e9a8e3; font-size: 1.33em; width: 440px; float: left;}
-.item_wrap {margin-bottom: 11px;}
-.item_wrap-bottom {float: left;}
-.item-photos, .item-photos a {height: 24px; font-size: 1.33em; color: #e9a8e3; }
 a {text-decoration: none;}
-.navigation a, .sub-navigation a {display: block; color:black; margin-bottom: 16px; font-size: 1.33em}
-.sub-navigation a {color: #e9a8e3; }
-.sub-navigation {min-height: 1px;}
-.navigation a:active, .navigation a:hover, .navigation a.active {background: #e9a8e3;}
-.sub-navigation a:active, .sub-navigation a:hover, .sub-navigation a.active {text-decoration: underline;}
+.navigation a, .sub-navigation a {display: block; margin-bottom: 4px; text-decoration: none; color: black;}
+.navigation-group {font-weight: bold;}
+.sub-navigation {margin-bottom: 1em;}
 
-#footer {text-align: center; color: #e9a8e3; }
-#footer a {color: #cf74c6;}
-#footer a:hover {color: #e9a8e3;}
+sub-navigation-1 a:hover, sub-navigation-1 a.active, .subnav-1-1:hover, .subnav-1-1.active {background-color: #cc92df;}
+.subnav-1-2:hover, .subnav-1-2.active {background-color: #e9a8e3 !important;}
+.subnav-1-3:hover, .subnav-1-3.active {background-color: #c2b2ea !important;}
+.subnav-1-4:hover, .subnav-1-4.active {background-color: #b19beb !important;}
+.subnav-1-5:hover, .subnav-1-5.active {background-color: #7e54eb !important;}
+sub-navigation-2 a:hover, .sub-navigation-2 a.active, .subnav-2-1:hover, .subnav-2-1.active {background-color: #0fd8f5;}
+.subnav-2-2:hover, .subnav-2-2.active {background-color: #8adde2 !important;}
+.subnav-2-3:hover, .subnav-2-3.active {background-color: #36dec9 !important;}
+.subnav-2-4:hover, .subnav-2-4.active {background-color: #22e6cd !important;}
+.subnav-2-5:hover, .subnav-2-5.active {background-color: #23eef7 !important;}
+sub-navigation-3 a:hover, .sub-navigation-3 a.active, .subnav-3-1:hover, .subnav-3-1.active {background-color: #fbfc64;}
+.subnav-3-2:hover, .subnav-3-2.active {background-color: #fcd364 !important;}
+.subnav-3-3:hover, .subnav-3-3.active {background-color: #e1f2a3 !important;}
+.subnav-3-4:hover, .subnav-3-4.active {background-color: #fcb07d !important;}
+.subnav-3-5:hover, .subnav-3-5.active {background-color: #f2e02a !important;}
+
+.page_the-new-sensitivity h2 {border-color: #cc92df;}
+.page_manipulation h2 {border-color: #e9a8e3;}
+.page_kibbutz-break-apart h2 {border-color: #c2b2ea;}
+.page_geut-water h2 {border-color: #0fd8f5;}
+.page_edri-dairy h2 {border-color: #8adde2;}
+.page_status-cans h2 {border-color: #36dec9;}
+.page_travel-to-history h2 {border-color: #fbfc64;}
+.page_shadow-theater h2 {border-color: #fcd364;}
+.page_corn-packages h2 {border-color: #e1f2a3;}
+.page_meir-ariel-discs h2 {border-color: #fcb07d;}
+.page_misc h2 {border-color: #f2e02a;}
+
+.page_the-new-sensitivity .contact, .page_the-new-sensitivity .contact a {color: #cc92df;}
+.page_manipulation .contact, .page_manipulation .contact a {color: #e9a8e3;}
+.page_kibbutz-break-apart .contact, .page_kibbutz-break-apart .contact a {color: #c2b2ea;}
+.page_geut-water .contact, .page_geut-water .contact a {color: #0fd8f5;}
+.page_edri-dairy .contact, .page_edri-dairy .contact a {color: #8adde2;}
+.page_status-cans .contact, .page_status-cans .contact a {color: #36dec9;}
+.page_travel-to-history .contact, .page_travel-to-history .contact a {color: #fbfc64;}
+.page_shadow-theater .contact, .page_shadow-theater .contact a {color: #fcd364;}
+.page_corn-packages .contact, .page_corn-packages .contact a {color: #e1f2a3;}
+.page_meir-ariel-discs .contact, .page_meir-ariel-discs .contact a {color: #fcb07d;}
+.page_misc .contact, .page_misc .contact a {color: #f2e02a;}
+
+.sidebar {position: fixed;}
+.rtl .sidebar {position: static;}
+.contact {padding: 0 0 0.5em;}
+.contact, .contact a {color: black;}
+.contact p {margin-bottom: 0.5em;}
+
+#main {margin-left: 240px;}
+.rtl #main {margin-left: 0; }
+
+#footer {color:#CCCCCC; margin:0 240px; text-align:center; width:550px;}
+#footer a {color: #999999;}
+#footer a:hover {color: #666666;}
+
+hr {
+margin: 0 auto;
+background: url({{ pack.dots.get_file }}) repeat-x center center transparent;
+height: 18px;
+}
+
+/** item.html **/
+h2{ border-bottom:3px solid #000; font-size:1.2em; font-weight:bold; height:1.6em; margin-top:3.5em;}
+.page_home h2 {display: none;}
+
+.item_wrap {margin-bottom: 40px; }
+.site-noa-barzily .description {direction: rtl;}
+
+/** item-2-in-a-row.html **/
+.t_item-2-in-a-row .item_wrap {float: left; width: 265px;margin-left: 10px;}
+.rtl .t_item-2-in-a-row .item_wrap {float: right; }
+
+/** catalog.html **/
+
+.catalog .item-title, #content .catalog .item-tags {color: black; text-decoration: none; display: block; }
+
+.catalog li {display: block; min-height: 150px; position: relative; margin-right: 10px; margin-bottom: 3em;}
+.rtl .catalog li {margin-right: 0; margin-left: 10px;}
+
+.item-thumb img{max-width: 265px; max-height: 150px;}
+.item-thumb {float: left; width: 265px; height: 150px; text-align: center; background: #f7f7f7; overflow: hidden;}
+.rtl .item-thumb {float: right;}
+
+#content .catalog {clear: both; margin: 0; padding: 0;}
+.horizontal .item-title, .horizontal .item-sub-title {width: 265px; text-align: center; font-weight: bold; margin-top: 1.5em;}
+.horizontal .item-sub-title {font-weight: normal; }
+
+.horizontal li {float: left; width: 265px;}
+.rtl .horizontal li {float: right;}
+
+.horizontal .item-title, .horizontal .item-sub-title {float: left; }
+.rtl .horizontal .item-title, .rtl .horizontal .item-sub-title {float: right; }
+
+.wide li {width: 100%;}
+.wide .item-thumb {width: 100%; height: auto;}
+.wide .item-thumb img {max-width: none; max-height: none;}
+.wide .item-title, .horizontal .item-sub-title {width: 100%;}
+
+.rss {display: none;}
+.item-sub-title {text-decoration: none; min-height: 4em; color: black;}
+
+object {height: 250px !important; width: 300px !important; margin: 0 125px;}

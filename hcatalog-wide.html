@@ -1,0 +1,25 @@
+{% extends pack.base.template %}
+{% load markup %}
+{% load utils %}
+
+{% block main %}
+<h2>{{ page.name }}</h2>
+<div class="description span-14">
+    {{ page.dic.description|textile }}
+</div>
+{% with "wide horizontal" as catalog_class %}
+<ul class="catalog {{ catalog_class }}">
+	{% for i in items %}
+	<li class="catalog-item c{{forloop.counter}} {% cycle 'odd' 'even' %} {% if portfolio.design.dic.thumbs_per_line %}n{{ forloop.counter|mod:portfolio.design.dic.thumbs_per_line }}-mod-item {% if forloop.counter|divisibleby:portfolio.design.dic.thumbs_per_line %}last{% endif %}{% endif %}">
+			<a class="item-thumb" href="{{i.url}}">{{ i|render_thumb:"550x0" }}</a>
+			<a class="item-title" href="{{i.url}}">{{i.name }}</a>
+			{% if i.dic.sub_title %}
+			<a class="item-sub-title" href="{{ i.url }}">{{ i.dic.sub_title }}</a>
+			{% endif %}
+	</li>
+	{% endfor %}
+	<span class="clear">&nbsp;</span>
+</ul>
+{% endwith %}
+<a class="rss" href="rss.xml">RSS</a>
+{% endblock %}
