@@ -1,10 +1,10 @@
 /** base.html **/
 #content {min-height: 410px;}
 h1 {margin: 0;}
-.logo a{ color: #e9a8e3; font-size: 60px; width: 190px; height: 74px; background-position: center !important;}
+.logo a{ color: #e9a8e3; font-size: 60px; width: 190px; height: 100px; background-position: center !important;}
 
 a {text-decoration: none;}
-.navigation a, .sub-navigation a {display: block; margin-bottom: 4px; text-decoration: none; color: black;}
+.navigation a, .sub-navigation a {display: block; text-decoration: none; color: black;}
 .navigation-group {font-weight: bold;}
 .sub-navigation {margin-bottom: 1em;}
 
@@ -57,7 +57,7 @@ sub-navigation-3 a:hover, .sub-navigation-3 a.active, .subnav-3-1:hover, .subnav
 #main {margin-left: 240px;}
 .rtl #main {margin-left: 0; }
 
-#footer {color:#CCCCCC; margin:0 240px; text-align:center; width:550px;}
+#footer {color:#CCCCCC; margin:0 280px; text-align:center; width:550px;}
 #footer a {color: #999999;}
 #footer a:hover {color: #666666;}
 
